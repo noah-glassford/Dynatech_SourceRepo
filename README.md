@@ -13,4 +13,4 @@ Development Team:
 - Robson Basha
 - Mitchel Bloch
 - Alan Dong
-- Clark Perritt (Not in Engines class, in gdw team)
+- Clark Perritt
