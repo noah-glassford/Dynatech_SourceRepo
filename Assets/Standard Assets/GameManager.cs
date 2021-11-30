@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     //Enemies Data
     [Header("Enemy Data")]
     public GameObject humanEnemy, dogEnemy;
-    private List<EnemySpawnPoint> enemySpawners = new List<EnemySpawnPoint>();
+    public List<EnemySpawnPoint> enemySpawners = new List<EnemySpawnPoint>();
 
     public float minSpeed = 3.5f;
     public float maxSpeed = 5f;

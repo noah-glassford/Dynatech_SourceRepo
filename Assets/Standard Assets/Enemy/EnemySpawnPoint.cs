@@ -19,12 +19,13 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         for (int i = 0; i < enemyToSpawn; i++)
         {
-            GameObject tempE = EnemyObjectPool.instance.SpawnFromPool("Enemy", transform.position, transform.rotation);  //Instantiate(enemy, transform.position, transform.rotation);
+            //GameObject tempE = EnemyObjectPool.instance.SpawnFromPool("Enemy", transform.position, transform.rotation);  
+            GameObject tempE = Instantiate(enemy, transform.position, transform.rotation);
             tempE.GetComponent<NavMeshAgent>().speed = enemySpeed * Random.Range(0.9f, 1.1f);
             Enemy e = tempE.GetComponent<Enemy>();
             e.Health = enemyHP;
         }
-        StartCoroutine(SetOff());
+        //StartCoroutine(SetOff());
 
     }
 

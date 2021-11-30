@@ -29,7 +29,7 @@ public class PlayerInteractions : MonoBehaviour
             if (inter != null)
             {
                 HandleInteraction(inter);
-                onIntTxt.text = inter.getDescription();
+                onIntTxt.text = inter.getDescription(pgd);
             }
             else onIntTxt.text = " ";
         }

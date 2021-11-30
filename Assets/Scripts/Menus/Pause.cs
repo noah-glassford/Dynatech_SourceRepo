@@ -36,6 +36,7 @@ public class Pause : MonoBehaviour
         OptionsScreenObject.SetActive(false);
         MainScreenObject.SetActive(true);
         Time.timeScale = 0f;
+        AudioListener.volume = 0f;
     }
 
     public void UnPause()
@@ -45,5 +46,6 @@ public class Pause : MonoBehaviour
         OptionsScreenObject.SetActive(false);
         MainScreenObject.SetActive(true);
         Time.timeScale = 1f;
+        AudioListener.volume = 1f;
     }
 }

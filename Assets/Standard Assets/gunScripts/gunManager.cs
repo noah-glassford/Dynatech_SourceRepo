@@ -20,7 +20,8 @@ public class gunManager : MonoBehaviour
 
     [Header("UI Data")]
     public Text ammoDisplay;
-
+    public Image gunIC;
+    public Text gunLvl;
     public Gun currentGun;
 
     [Header("Debug Data")]
@@ -48,7 +49,6 @@ public class gunManager : MonoBehaviour
             StartCoroutine(SwitchAfterDelay(index));
         }
         ammoDisplay.text = currentGun.roundsRemaining + "/" + currentGun.magazineSize;
-        //JSAM.AudioManager.PlaySound(Sounds.PISTOL);
     }
 
     public void addNewGun(GameObject gunHolder, int indexPos) {
@@ -72,12 +72,15 @@ public class gunManager : MonoBehaviour
     }
 
     private IEnumerator SwitchAfterDelay(int _index) {
+        if (!currentGun.isReloading)
+        {
 
-        isSwitching = true;
-        yield return new WaitForSeconds(0.0f);
-        switchWeapons(_index);
+            isSwitching = true;
+            yield return new WaitForSeconds(0.0f);
+            switchWeapons(_index);
 
-        isSwitching = false;
+            isSwitching = false;
+        }
     }
 
     private void switchWeapons(int newIndex) 
@@ -92,5 +95,7 @@ public class gunManager : MonoBehaviour
         Debug.Log("Guns Switched");
         currentGun = guns[newIndex].GetComponentInChildren<Gun>();
         ammoDisplay.text = currentGun.roundsRemaining + "/" + currentGun.magazineSize;
+        gunIC.sprite = currentGun.gunIcon;
+        gunLvl.text = currentGun.gunLevel.ToString();
     }
 }

@@ -14,7 +14,7 @@ public class Door : Interactablle
     public Animator doorAnim;
     public Collider col;
 
-    public override string getDescription()
+    public override string getDescription(PlayerGameData pgd)
     {
         if (isClosed) return "Press [E] To Open Door For " + priceToOpen.ToString() + " Gears";
         else return "AHHHOHOOHOHOHOHOHOHO";

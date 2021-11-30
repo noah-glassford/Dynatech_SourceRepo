@@ -7,9 +7,12 @@ public class GunDecals : MonoBehaviour
     public bool randomColor;
     public Color secondaryColor;
 
+    public LineRenderer trail;
+
     [Header("Gun Attachments")]
     public GameObject[] attachments;
 
+    [Header("Particles")]
     public ParticleSystem[] particles;
 
     [Header("Gun Ligthing")]
@@ -20,6 +23,14 @@ public class GunDecals : MonoBehaviour
         if (randomColor) 
         {
             secondaryColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        }
+
+        secondaryColor.a = 255f;
+
+        if (trail != null)
+        {
+            var rend = trail.GetComponent<Renderer>();
+            rend.material.SetColor("Base", secondaryColor);
         }
 
         //Apply Color to Attachments

@@ -19,6 +19,7 @@ public class PlayerGameData : MonoBehaviour
     public int playerNumber = 0;
     public int currentRound;
     public int currentPoints;
+    public int pointsToDisplay = 0; 
 
     public DamageFlicker df;
     public int health = 6;
@@ -26,7 +27,8 @@ public class PlayerGameData : MonoBehaviour
 
 
     private void Start()
-    { 
+    {
+        pointsToDisplay = 0;
     }
 
     private void Update()
@@ -38,6 +40,35 @@ public class PlayerGameData : MonoBehaviour
             JSAM.AudioManager.StopSoundLoop(Sounds.LOWHEALTH);
             JSAM.AudioManager.PlaySound(Sounds.HEALTHRESTORE);
         }
+
+        //Points to Display Updates
+        var diff = Mathf.Abs(pointsToDisplay - currentPoints);
+
+        if (diff > 5000)
+        {
+            if (pointsToDisplay < currentPoints)
+                pointsToDisplay += 100;
+            if (pointsToDisplay > currentPoints)
+                pointsToDisplay -= 100;
+        }
+        if (diff > 1000)
+        {
+            if (pointsToDisplay < currentPoints)
+                pointsToDisplay += 20;
+            if (pointsToDisplay > currentPoints)
+                pointsToDisplay -= 20;
+        }
+        if (diff > 200)
+        {
+            if (pointsToDisplay < currentPoints)
+                pointsToDisplay += 5;
+            if (pointsToDisplay > currentPoints)
+                pointsToDisplay -= 5;
+        }
+            if (pointsToDisplay < currentPoints)
+                pointsToDisplay += 1;
+            if (pointsToDisplay > currentPoints)
+                pointsToDisplay -= 1;
     }
 
     public void setData(GameManager _gm, int _playerCount, int _playerNumber) {

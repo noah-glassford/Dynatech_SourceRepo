@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031342395, g: 0.003007248, b: 0.003451746, a: 1}
+  m_IndirectSpecularColor: {r: 0.0001537276, g: 0.00014750706, b: 0.00016931607, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12161,7 +12161,7 @@ RectTransform:
   m_GameObject: {fileID: 689394175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 948830489}
   m_RootOrder: 0
@@ -12169,7 +12169,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -366.7, y: 0}
-  m_SizeDelta: {x: 622, y: 517}
+  m_SizeDelta: {x: 622, y: 308.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &689394177
 Animator:
@@ -12210,7 +12210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 436b511f50f5aa340922409ff8f804dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c34742e7cc7e104c9b4b5cbbe1cb5e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12916,9 +12916,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b6eeecf9f3c8444583c40e8fde90e09, type: 2}
   - {fileID: 11400000, guid: 2d6d25fbfd5910943a10384a3f087bbd, type: 2}
   - {fileID: 11400000, guid: b738c83d2223ca94fa19e1eff990fb89, type: 2}
+  - {fileID: 11400000, guid: 8cfe516a108a9ae47a0c455ccd097ff8, type: 2}
+  - {fileID: 11400000, guid: 0792dd79507555c4fb171ce400265674, type: 2}
   - {fileID: 11400000, guid: 2a0348749fddfd8409bc12b391b3cbf6, type: 2}
   - {fileID: 11400000, guid: d98749987cd5a354b8aae3c7147f7390, type: 2}
   - {fileID: 11400000, guid: 38e774a84aad84a45a1be6e7724c3661, type: 2}
+  - {fileID: 11400000, guid: b337f4005f2ed5546acf862bd3e03b84, type: 2}
   audioFileMusicObjects:
   - {fileID: 11400000, guid: 79bdd22b538a81143b7fe33dab19b4e9, type: 2}
   - {fileID: 11400000, guid: 326b95a50124add4baf166baf8cd8ffb, type: 2}
@@ -20761,7 +20764,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: dffa36221cec9e946bd3a6edf139e2f0, type: 2}
+  m_MaterialTemplate: {fileID: 2541457280464432744, guid: 4c90ee5801e98c54b8171e529b94d926, type: 3}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1

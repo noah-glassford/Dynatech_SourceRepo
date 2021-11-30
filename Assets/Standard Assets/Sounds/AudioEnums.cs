@@ -18,7 +18,8 @@ namespace JSAM {
         SMG,
         UICONFIRM,
         UIHOVER,
-        WEAPONBUY
+        WEAPONBUY,
+        WEAPONUPGRADE
     }
     public enum Music {
         MUSIC,

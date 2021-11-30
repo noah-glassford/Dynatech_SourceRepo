@@ -32,10 +32,10 @@ public class PointsDisplay : MonoBehaviour
 
         for (int i = 0; i < gm.playerCount; i++)
         {
-            if (pointsToDisplay[i] != pd[i].currentPoints && playerNumber == pd[i].playerNumber)
+            if (pointsToDisplay[i] != pd[i].pointsToDisplay && playerNumber == pd[i].playerNumber)
             //if (pointsToDisplay[i] != gd[i].currentPoints)
             {
-                pointsToDisplay[i] = pd[i].currentPoints;
+                pointsToDisplay[i] = pd[i].pointsToDisplay;
                 t.text = pointsToDisplay[i].ToString();
             }
         }

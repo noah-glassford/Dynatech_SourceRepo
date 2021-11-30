@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using JSAM;
 using UnityEngine.VFX;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    [Header("MUST HAVE")]
+    public int GunNumber = 000;
+    public int gunLevel = 1;
+
     [Header("General Data")]
     public Camera playerCamera;
     public GameObject player;
@@ -34,7 +39,7 @@ public class Gun : MonoBehaviour
     public int magazineSize = 8;
     [HideInInspector]
     public int roundsRemaining;
-    private bool isReloading;
+    public bool isReloading;
 
     [Header("Gun Fire Rate Data")]
     public float fireRate = 0.25f;
@@ -49,6 +54,9 @@ public class Gun : MonoBehaviour
     private GunDecals gDecs;
     public Color gDecsColor;
 
+    [Header("UI Icon")]
+    public Sprite gunIcon;
+
     [Header("Animation Data")]
     public Animator anim;
 
@@ -62,6 +70,7 @@ public class Gun : MonoBehaviour
     private float ResetLerpT = 0;
     private bool isReseting = false;
     private Quaternion RotXForReset = new Quaternion(1, 1, 1, 1);
+
 
     //For Gun Visuals
     public LineRenderer bulletTrail;
@@ -162,7 +171,7 @@ public class Gun : MonoBehaviour
     }
 
     IEnumerator BurstFire() {
-        if (canBurst && fireTimer >= fireRate)
+        if (canBurst && fireTimer >= fireRate && !isReloading)
         {
             canBurst = false;
             for (int i = 0; i < 3; i++)
@@ -176,7 +185,7 @@ public class Gun : MonoBehaviour
     }
 
     private void ShotgunFire() {
-        if (fireTimer >= fireRate)
+        if (fireTimer >= fireRate && !isReloading)
         {
 
             for (int i = 0; i < shellCount; i++)
@@ -234,7 +243,6 @@ public class Gun : MonoBehaviour
         if (hit.Length > 0)
         {
             lineR.SetPosition(1, hit[0].point);
-            Debug.Log(hit[0].point);
         }
 
         int tPierce = pierceHealth;

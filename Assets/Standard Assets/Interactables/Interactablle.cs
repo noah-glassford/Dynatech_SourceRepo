@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Interactablle : MonoBehaviour
 {
 
-    public abstract string getDescription();
+    public abstract string getDescription(PlayerGameData p);
     public abstract void Interact(PlayerGameData p);
 
 }

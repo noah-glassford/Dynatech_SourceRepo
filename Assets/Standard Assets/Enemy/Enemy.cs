@@ -37,6 +37,12 @@ public class Enemy : MonoBehaviour
     public GameManager gm;
     public NavMeshAgent nav;
 
+    //Enemy OnDamageData
+    int d;
+    GameObject p;
+    Color c;
+
+
     [Header("VisualEffects")]
 
     public GameObject ExplosionVisual;
@@ -56,6 +62,9 @@ public class Enemy : MonoBehaviour
         if(timeTillNavUpdate <= 0)
             UpdateNavMesh(); //Will auto optimize the nav mesh agent and hunt the closest player
         timeTillNavUpdate -= Time.deltaTime;
+
+        if (d > 0)
+            onDamageUpdate();
     }
 
     private void UpdateNavMesh() {
@@ -77,15 +86,21 @@ public class Enemy : MonoBehaviour
         else timeTillNavUpdate = 0.25f;
     }
 
-    public void TakeDamage(int damage, GameObject p, Color c) {
+    public void TakeDamage(int _d, GameObject _p, Color _c) {
+        d += _d;
+        p = _p;
+        c = _c;
+    }
+    private void onDamageUpdate() {
         if (canDie)
         {
             GameObject tempTxt = Instantiate(floatingText, transform.position, Quaternion.identity);
-            tempTxt.GetComponent<TextMesh>().text = damage.ToString();
+            tempTxt.GetComponent<TextMesh>().text = d.ToString();
             tempTxt.GetComponent<TextMesh>().color = c;
             tempTxt.transform.LookAt(p.transform.position);
-            Health -= damage;
-            Debug.Log(damage);
+            Health -= d;
+            Debug.Log(d);
+            d = 0;
             p.GetComponent<PlayerGameData>().currentPoints += pointsPerHit;
             JSAM.AudioManager.PlaySound(Sounds.HITMARKER);
             if (Health <= 0) Die(p);
@@ -108,7 +123,7 @@ public class Enemy : MonoBehaviour
 
         GameObject explosion = Instantiate(ExplosionVisual, transform.position, transform.rotation);
 
-        Destroy(explosion, 0.2f);
+        Destroy(explosion, 0.8f);
 
         //this.enabled = false;
     }
