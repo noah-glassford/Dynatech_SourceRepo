@@ -207,11 +207,17 @@ public class GameManager : MonoBehaviour
             if (temp.isActive) {
                 if (Random.Range(0.0f, 1.0f) < 0.9f)
                 {
-                    temp.SpawnEnemies(humanEnemy, enemiesHealth, Random.Range(minSpeed, maxSpeed), enemiesToSpawnTemp);
+                    IEnemy enemy = EnemyFactory.GetEnemy(EnemyType.Humanoid);
+
+                    temp.SpawnEnemies(humanEnemy, enemiesHealth, Random.Range(minSpeed, maxSpeed), enemiesToSpawnTemp, enemy.EnemyType());
+                    
                     hasSpawned = true;
                 }
                 else {
-                    temp.SpawnEnemies(dogEnemy, enemiesHealth, Random.Range(minSpeed, maxSpeed), enemiesToSpawnTemp);
+
+                    IEnemy enemy = EnemyFactory.GetEnemy(EnemyType.Canine); 
+
+                    temp.SpawnEnemies(dogEnemy, enemiesHealth, Random.Range(minSpeed, maxSpeed), enemiesToSpawnTemp, enemy.EnemyType());
                     hasSpawned = true;
                 }
             }

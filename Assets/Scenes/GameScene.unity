@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009298816, g: 0.008951068, b: 0.010328129, a: 1}
+  m_IndirectSpecularColor: {r: 0.009180501, g: 0.008808546, b: 0.010110542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42809,6 +42809,9 @@ MonoBehaviour:
   - tag: Enemy
     prefab: {fileID: 7090286425426813067, guid: af5e179f3d0dd9244a35ed2f6256c00d, type: 3}
     size: 30
+  - tag: Enemy_Dog
+    prefab: {fileID: 7090286425426813067, guid: bdad844b285ca3e488d695f1f6a0e64c, type: 3}
+    size: 15
 --- !u!1 &2098131765
 GameObject:
   m_ObjectHideFlags: 0

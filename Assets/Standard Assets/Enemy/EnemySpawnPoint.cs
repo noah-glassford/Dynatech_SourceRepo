@@ -15,15 +15,25 @@ public class EnemySpawnPoint : MonoBehaviour
         if (isDefault) isActive = true;
     }
 
-    public void SpawnEnemies(GameObject enemy, int enemyHP, float enemySpeed, int enemyToSpawn) 
+    public void SpawnEnemies(GameObject enemy, int enemyHP, float enemySpeed, int enemyToSpawn, bool isDog) 
     {
         for (int i = 0; i < enemyToSpawn; i++)
         {
-            //GameObject tempE = EnemyObjectPool.instance.SpawnFromPool("Enemy", transform.position, transform.rotation);  
-            GameObject tempE = Instantiate(enemy, transform.position, transform.rotation);
+            GameObject tempE;
+
+            if (!isDog)
+            {
+                tempE = EnemyObjectPool.instance.SpawnFromPool("Enemy", transform.position, transform.rotation);
+            }
+            else
+            {
+                tempE = EnemyObjectPool.instance.SpawnFromPool("Enemy_Dog", transform.position, transform.rotation);
+            }
+            //GameObject tempE = Instantiate(enemy, transform.position, transform.rotation);
             tempE.GetComponent<NavMeshAgent>().speed = enemySpeed * Random.Range(0.9f, 1.1f);
             Enemy e = tempE.GetComponent<Enemy>();
             e.Health = enemyHP;
+          
         }
         //StartCoroutine(SetOff());
 

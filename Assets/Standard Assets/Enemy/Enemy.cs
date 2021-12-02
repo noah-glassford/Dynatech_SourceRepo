@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float attackRange = 5f;
     private bool canAttack = true;
 
+    public bool isDogEnemy;
+
     public float minSeek = 5f;
     public float maxSeek = 10f;
 
