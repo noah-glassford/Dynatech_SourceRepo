@@ -1,4 +1,4 @@
-# Engines_A4
+# Dynatech
 
 Game Description
 Dynatech is a first person shooter inspired by old school call of duty zombies. Set in a not too distant future, a robot uprising has started.
@@ -12,4 +12,4 @@ Development Team:
 - Robson Basha
 - Mitchel Bloch
 - Alan Dong
-- Clark Perritt (Not in Engines class, in gdw team)
+- Clark Perritt
